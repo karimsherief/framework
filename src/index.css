@@ -98,10 +98,15 @@ nav {
   font-weight: bold;
   box-shadow: 0 5px hsl(var(--hue), var(--saturation), var(--lightness), var(--alpha)), 0 10px 2px rgba(0, 0, 0, .5);
 }
-
 /* Home */
 .home__image {
   width: 250px;
+}
+
+@media screen and (max-width:300px) {
+  .home__image {
+    width: 150px;
+  }
 }
 
 /* Portfolio */

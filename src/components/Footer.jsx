@@ -2,10 +2,10 @@ import { Col, Container, Row, Stack } from "react-bootstrap";
 import { FaGlobe, FaLinkedinIn, FaTwitter, FaFacebookF } from "react-icons/fa";
 export default function Footer() {
   return (
-    <footer className="text-center text-white ">
-      <div className="py-5 footer__contact ">
+    <footer className="text-center text-white">
+      <div className="py-5 footer__contact">
         <Container>
-          <Row className="justify-content-between" xs={1} md={2} lg={3}>
+          <Row className="justify-content-between gap-3 gap-md-0" xs={1} md={2} lg={3}>
             <Col>
               <h3>LOCATION</h3>
               <ul className="list-unstyled">

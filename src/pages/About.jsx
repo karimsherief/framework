@@ -11,7 +11,7 @@ export default function About() {
         </div>
       </div>
       <Container>
-        <Row>
+        <Row xs={1} md={2} className="text-center text-md-start">
           <Col>
             <p>
               Freelancer is a free bootstrap theme created by Route. The

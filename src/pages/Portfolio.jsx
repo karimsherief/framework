@@ -21,7 +21,7 @@ export default function Portfolio() {
       <Container>
         <Row className="g-4">
           {PortfolioImages.map((image, i) => (
-            <Col md={4} key={i}>
+            <Col md={6} lg={4} key={i}>
               <div
                 className="portfolio__image"
                 onClick={() => {

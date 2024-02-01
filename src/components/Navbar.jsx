@@ -1,14 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Navbar as NavbarBS, Nav, Container } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const buttonRef = useRef();
   const [isScroll, setIsScroll] = useState(false);
+  const { pathname } = useLocation();
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setIsScroll(window.scrollY >= 60);
     });
   }, []);
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      buttonRef.current.click();
+    }
+  }, [pathname]);
+
   return (
     <NavbarBS
       expand="md"
@@ -20,7 +28,11 @@ export default function Navbar() {
         <NavbarBS.Brand as={NavLink} to="/" className="fs-3 fw-bold">
           Framework
         </NavbarBS.Brand>
-        <NavbarBS.Toggle aria-controls="basic-navbar-nav" />
+        <NavbarBS.Toggle
+          aria-controls="basic-navbar-nav"
+          className="shadow-none border-0"
+          ref={buttonRef}
+        />
         <NavbarBS.Collapse className="justify-content-end">
           <Nav className="gap-2 mt-3 mt-md-0">
             <Nav.Link as={NavLink} to="/">
